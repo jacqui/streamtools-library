@@ -1,0 +1,1 @@
+Using the USGS feed of significant earthquakes over the past week, this pattern keeps a running count and detailed information on each.
