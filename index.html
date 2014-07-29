@@ -8,14 +8,16 @@
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
 
   <script type="text/javascript">
   function foo(response) {
-    var meta = response.meta;
     var data = response.data;
-    console.log(meta);
-    console.log(data);
+    var files = data.tree.filter(function(item) { return item.type == "blob" && item.path.indexOf(".json") >= 0 }); 
+    $.each(files, function(i, pattern) {
+      splitPath = pattern.path.split("/");
+      row = "<tr><td>" + splitPath[1] + ": <a href=\"" + pattern.path + "\">" + splitPath[2] + "</a></td></tr>";
+      $("#patterns-list").append(row);
+    });
   }
 
   var script = document.createElement('script');
