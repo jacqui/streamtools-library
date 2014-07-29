@@ -9,7 +9,22 @@
   <link rel="stylesheet" href="css/main.css">
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+
+  <script type="text/javascript">
+  function foo(response) {
+    var meta = response.meta;
+    var data = response.data;
+    console.log(meta);
+    console.log(data);
+  }
+
+  var script = document.createElement('script');
+  script.src = 'https://api.github.com/repos/jacqui/streamtools-library/contents/patterns?callback=foo';
+
+  document.getElementsByTagName('head')[0].appendChild(script);
+  </script>
 </head>
+  
 <body>
   <div class="jumbotron">
     <div class="container">

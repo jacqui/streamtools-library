@@ -9,12 +9,12 @@ $(document).ready(function(){
       return { "name": patternName, "type": fileType, "url": pattern.html_url};
     });
   });
-  */
   $.getJSON("http://api.github.com/repos/jacqui/streamtools-library/contents/patterns", function(data) {
     $.each(data, function(i, pattern) {
       row = "<tr><td><a href=\"" + pattern.html_url + "\">" + pattern.name + "</a></td></tr>";
       $("#patterns-list").append(row);
     });
   });
+  */
 
 });
