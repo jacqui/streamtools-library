@@ -1,0 +1,68 @@
+{
+  "Blocks": [
+    {
+      "Id": "request",
+      "Type": "webRequest",
+      "Rule": {
+        "BodyPath": ".",
+        "Headers": {},
+        "Method": "",
+        "Url": "",
+        "UrlPath": ""
+      },
+      "Position": {
+        "X": 355,
+        "Y": 305
+      }
+    },
+    {
+      "Id": "bang",
+      "Type": "bang",
+      "Rule": null,
+      "Position": {
+        "X": 374,
+        "Y": 181
+      }
+    },
+    {
+      "Id": "ticker",
+      "Type": "ticker",
+      "Rule": {
+        "Interval": "1m0s"
+      },
+      "Position": {
+        "X": 279,
+        "Y": 236
+      }
+    },
+    {
+      "Id": "output",
+      "Type": "tolog",
+      "Rule": null,
+      "Position": {
+        "X": 279,
+        "Y": 412
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "Id": "5",
+      "FromId": "request",
+      "ToId": "output",
+      "ToRoute": "in"
+    },
+    {
+      "Id": "6",
+      "FromId": "bang",
+      "ToId": "request",
+      "ToRoute": "in"
+    },
+    {
+      "Id": "7",
+      "FromId": "ticker",
+      "ToId": "request",
+      "ToRoute": "in"
+    }
+  ]
+}
