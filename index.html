@@ -15,7 +15,7 @@
     var files = data.tree.filter(function(item) { return item.type == "blob" && item.path.indexOf(".json") >= 0 }); 
     $.each(files, function(i, pattern) {
       splitPath = pattern.path.split("/");
-      row = "<tr><td>" + splitPath[1] + ": <a href=\"" + pattern.path + "\">" + splitPath[2] + "</a></td></tr>";
+      row = "<tr><td>" + splitPath[1] + ": <a href=\"http://github.com/jacqui/streamtools-library/blob/master/" + pattern.path + "\">" + splitPath[2] + "</a></td></tr>";
       $("#patterns-list").append(row);
     });
   }
